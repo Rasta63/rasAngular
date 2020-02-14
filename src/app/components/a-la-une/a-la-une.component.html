@@ -1,0 +1,9 @@
+<img src="https://www.atoutformation.fr/wp-content/uploads/2019/04/image-a-la-une-1.png" alt="image à la une">
+<ng-container *ngIf='!isLoading'>
+    <div *ngFor="let artic of articles" class="col-md-12">
+        <app-detail-article [articl]="artic"></app-detail-article>
+    </div>
+</ng-container>
+<ng-container *ngIf='isLoading'>
+    <fa-icon [spin]="true" [icon]="faCog" class="fax-3"></fa-icon>
+</ng-container>

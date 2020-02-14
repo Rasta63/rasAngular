@@ -1,0 +1,40 @@
+<h1 class="d-inline mr-2">
+    Les articles presents</h1>
+<a class="ml-2" routerLink="/admin/article/add" class="text-center"><button class="btn btn-success from-control" >Ajouter un Article</button></a>
+<ng-container *ngIf="!isLoading">
+<table class="table table-striped mt-2">
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th>
+            <th>titre</th>
+            <th>date</th>
+            <th>contenu</th>
+            <th>categorie</th>
+            <th>image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let article of articles">
+            <td>{{article.id}}</td>
+            <td>{{article.titre}}</td>
+            <td>{{article.dateCreated | date:"dd/MM/yyyy"}}</td>
+            <td>{{article.contenu}}</td>
+            <td>{{article.category}}</td>
+            <td><img src="{{article.image}}" alt=""> </td>
+            <td>
+                <a class="align-middle" [routerLink]="['/admin/article/edit',article.id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </a>
+                <a class="align-middle" style="color: red; cursor: pointer;" (click)="deleteArticle(article)">
+                    <fa-icon class="ml-3" [icon]="faTrash"></fa-icon>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</ng-container>
+<ng-container *ngIf='isLoading'>
+    <fa-icon [spin]="true" [icon]="faCog" class="fax-3"></fa-icon>
+</ng-container>
+<button (click)="redirectHome()" class="btn btn-danger">Back Home</button>

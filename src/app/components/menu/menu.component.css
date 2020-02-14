@@ -1,0 +1,10 @@
+.img-200{
+    width: 200px;
+}
+.navbar-nav .nav-link:hover {
+    color: 
+    rgba(241, 8, 8, 0.7);
+}
+.active {
+    color:  rgba(241, 8, 8, 0.7) !important;
+}

@@ -1,0 +1,9 @@
+<p><img src="https://saintandresursevre.fr/wp-content/uploads/2017/07/visuel_3.jpg" alt="Image vie local"></p>
+<ng-container *ngIf='!isLoading'>
+<div *ngFor="let artic of articles" class="col-md-12">
+    <app-detail-article [articl]="artic"></app-detail-article>
+</div>
+</ng-container>
+<ng-container *ngIf='isLoading'>
+    <fa-icon [spin]="true" [icon]="faCog" class="fax-3"></fa-icon>
+</ng-container>

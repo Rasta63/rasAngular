@@ -1,0 +1,34 @@
+<div class="container-fluid row border-1">
+
+    <div [ngSwitch]="favoriTeam" class="col-6">
+
+        <h2 [style.background-color]="color1">Mon équipe favorite </h2>
+        <button class="btn btn-success" (click)="changeBtnClicked()">
+            Cliquez sur moi !!
+        </button>
+        <img *ngSwitchCase="'ASM'"
+            src="https://upload.wikimedia.org/wikipedia/fr/a/a8/Logo_ASM_Clermont_Auvergne_2019.svg" alt="Asm">
+        <img *ngSwitchCase="'TOULON'" src="https://upload.wikimedia.org/wikipedia/fr/3/34/Logo_RC_Toulon_2015.svg"
+            alt="toulon">
+        <img *ngSwitchCase="'MAYOTTE'"
+            src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1d/Logo_de_Mayotte.svg/425px-Logo_de_Mayotte.svg.png"
+            alt="Maotte">
+        <p *ngSwitchDefault>Je n'ai pas d'equipe favorite</p>
+    </div>
+    <div class="col-6 bg-secondary">
+        <h2 [style.background-color]="color2">Le classement</h2>
+        <ol>
+            <li *ngFor="let team of classement">{{team}}</li>
+        </ol>
+    </div>
+    <h2 style="text-align: center;"> nombre de vote : {{nbClick}}</h2>
+    <ng-container *ngIf='!isLoading'>
+        <div *ngFor="let artic of articles" class="col-md-12">
+            <app-detail-article (votEmitter)="vot(event)" [articl]="artic"></app-detail-article>
+        </div>
+    </ng-container>
+    <ng-container *ngIf='isLoading'>
+        <fa-icon [spin]="true" [icon]="faCog" class="fax-3"></fa-icon>
+    </ng-container>
+
+</div>

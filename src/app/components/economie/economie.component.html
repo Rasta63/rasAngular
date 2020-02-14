@@ -1,0 +1,10 @@
+<img src="https://static.latribune.fr/full_width/624806/plus-de-moyens-pour-l-economie-sociale-et-solidaire-en-languedoc-roussillon.jpg"
+    alt="Economie">
+<ng-container *ngIf='!isLoading'>
+    <div *ngFor="let artic of articles" class="col-md-12">
+        <app-detail-article [articl]="artic"></app-detail-article>
+    </div>
+</ng-container>
+<ng-container *ngIf='isLoading'>
+    <fa-icon [spin]="true" [icon]="faCog" class="fax-3"></fa-icon>
+</ng-container>

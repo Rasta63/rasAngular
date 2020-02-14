@@ -1,0 +1,7 @@
+<div class="border-1 text-center">
+    <h2> <a [routerLink]="['/article', articl.id]">{{articl.titre}} jour : {{articl.dateCreated | date:'dd'}}, mois :
+            {{articl.dateCreated | month}}, Année {{articl.dateCreated | date:'yyyy'}} </a> </h2>
+    <div> <button [routerLink]="['/article', articl.id]" class="btn btn-primary">Ouvrir l'article</button></div>
+    <label>{{nbVote}} </label><input type="submit" class="btn btn-success" value="Votez pour cette article"
+        (click)="vote()">
+</div>

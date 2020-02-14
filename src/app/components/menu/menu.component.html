@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a routerLink=''><img src="assets/logo-MT.svg" alt="logo-laMontagne" class="img-200"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  m-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active" (click)="logEvent('A la une')">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/a-la-une" routerLinkActive="active" (click)="logEvent('A la une')">A LA UNE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/vie-locale' routerLinkActive="active" (click)="logEvent('Vie local')">VIE LOCALE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " routerLink='/sport' routerLinkActive="active" (click)="logEvent('Sport')">SPORT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/loisirs' routerLinkActive="active" (click)="logEvent('Service')">LOISIRS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/economie' routerLinkActive="active" (click)="logEvent('ECONOMIE')">ECONOMIE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/admin' routerLinkActive="active" (click)="logEvent('Administration')">ADMINISTRATION</a>
+            </li>
+
+        </ul>
+        <img src="assets/Capture.JPG" alt="logo-recherche">
+        <img src="assets/Capture.PNG" alt="logo-sign in">
+        <span class="navbar-toggler-icon"></span>
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+<ng-container *ngIf="!isLoading">
+    <div *ngIf="article" class="text-center">
+        <h1> {{article.titre}} jour : {{article.dateCreated | date:'dd'}}, mois :{{article.dateCreated | month}}, Année
+            {{article.dateCreated | date:'yyyy'}}</h1>
+
+        <div class="row">
+            <div class="col-6">
+                <img src="{{article.image}}" alt="image {{article.titre}}">
+            </div>
+            <div class="col-6">
+                {{article.contenu}}
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!article" class="text-center">
+        <img src="https://image.freepik.com/vector-gratis/error-404-pagina-no-encontrada-falta-papel_114341-25.jpg"
+            alt="erreur 404">
+    </div>
+</ng-container>
+<ng-container *ngIf='isLoading'>
+    <fa-icon [spin]="true" [icon]="faCog" class="fax-3"></fa-icon>
+</ng-container>
+<button (click)="redirectHome()" class="btn btn-danger">Back Home</button>

@@ -1,0 +1,44 @@
+<div class="text-center">
+    <h1>Edition de l'article numero {{article.id}}y</h1>
+</div>
+<div style="width: 500px;margin: auto;">
+    <form #articleForm="ngForm" (ngSubmit)="onSubmit()" class="form-group p">
+        <!--<div>
+            <label for="id">Id : </label>
+            <input type="number" required name="id" id="id" class="form-control" [(ngModel)]="article.id" #id="ngModel"
+                placeholder="numéro id de l'article">
+            <div [hidden]="id.valid" class="alert alert-danger">Le numero id est requis</div>
+        </div>-->
+        <div>
+            <label for="titre">Titre : </label>
+            <input type="text" required name="titre" id="titre" class="form-control" [(ngModel)]="article.titre"
+                #titre="ngModel" placeholder="Titre de l'article">
+            <div [hidden]="titre.valid" class="alert alert-danger">Le titre est requis</div>
+        </div>
+        <div>
+            <label for="image">Url image : </label>
+            <input type="text" required name="image" id="image" class="form-control" [(ngModel)]="article.image"
+                #image="ngModel" placeholder="Url de l'image de l'article">
+            <div [hidden]="image.valid" class="alert alert-danger">L'url de l'image est requis</div>
+        </div>
+        <div>
+            <label for="image">Contenu article : </label>
+            <textarea type="text" required name="contenu" id="contenu" class="form-control"
+                [(ngModel)]="article.contenu" #contenu="ngModel" placeholder="Contenu de l'article">
+            </textarea>
+            <div [hidden]="contenu.valid" class="alert alert-danger">Le contenu est requis</div>
+        </div>
+        <div>
+            <label for="image">Categorie : </label>
+            <select required name="categorie" id="categorie" class="form-control" [(ngModel)]="article.category"
+                #categorie="ngModel">
+                <option value="a la une">a la une</option>
+                <option value="vie locale">vie locale</option>
+                <option value="sport">sport</option>
+                <option value="loisir">loisir</option>
+            </select>
+            <div [hidden]="categorie.valid" class="alert alert-danger">Le categorie est requis</div>
+        </div>
+        <input type="submit" [disabled]="!articleForm.valid" value="Envoyer" class="btn btn-success form-control">
+    </form>
+</div>
