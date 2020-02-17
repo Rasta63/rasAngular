@@ -52,14 +52,18 @@ export class ArticleService {
 
    }
   
-   edit(articleEdit: Article){
-     
-     this.articles.filter(article => article.id === articleEdit.id)[0]=articleEdit;
+   edit(articleEdit: Article) : Observable<Article>{
 
+   return this.http.put<Article>(this.apiUrl + '/' + articleEdit.id, articleEdit)
+   .pipe(
+      catchError(this.handleError)
+    );
    }
-   deleteArticle(articleSupp : Article):Article[] {
-     this.articles = this.articles.filter(article => article !== articleSupp);
-     return this.articles;
+
+   deleteArticle(id : number):Observable<Article> {
+     //this.articles = this.articles.filter(article => article !== articleSupp);
+     return this.http.delete<Article>(this.apiUrl + '/'+id).pipe(retry(1),
+     catchError(this.handleError));
    }
    getByCategory(category) : Observable<Article[]>{
     return this.http.get<Article[]>(this.apiUrl+'?category='+category)

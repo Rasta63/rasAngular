@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddArticleComponent implements OnInit {
   article : Article;
+  isLoading : boolean;
   
   constructor(private articleService : ArticleService, private router : Router,private toastr: ToastrService) { }
 
@@ -21,6 +22,7 @@ export class AddArticleComponent implements OnInit {
   }
 
   onSubmit(){
+   
     this.articleService.add(this.article).subscribe(data => {
       this.toastr.success("Votre Article a été bien ajouté!!");
       this.router.navigate(['/admin']);

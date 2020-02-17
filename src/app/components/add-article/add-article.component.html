@@ -36,9 +36,10 @@
                 <option value="vie locale">vie locale</option>
                 <option value="sport">sport</option>
                 <option value="loisir">loisir</option>
+                <option value="economie">economie</option>
             </select>
             <div [hidden]="categorie.valid" class="alert alert-danger">Le categorie est requis</div>
         </div>
-        <input type="submit" [disabled]="!articleForm.valid" value="Envoyer" class="btn btn-success form-control">
+        <input type="submit" id="submitBtn" [disabled]="!articleForm.valid" value="Envoyer" class="btn btn-success form-control">
     </form>
 </div>
